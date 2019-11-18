@@ -8,7 +8,7 @@ public class Service {
 
     @GetMapping(value="/")
 	private String helloWorld() {
-        return "Hello World Feria TI Banco Ripley!";
+        return "Hello World Feria TI Banco Ripley v3!";
     }
 
 }
