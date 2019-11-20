@@ -40,7 +40,7 @@ pipeline{
       steps {
         script {
           openshift.withCluster() {
-            openshift.withProject( {
+            openshift.withProject() {
               openshift.selector("dc", "java-springboot-example").rollout().latest();
             }
           }
