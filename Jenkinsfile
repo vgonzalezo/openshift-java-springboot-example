@@ -28,7 +28,7 @@ pipeline{
       steps{
         script {
           openshift.withCluster() {
-            openshift.withProject('poc') {
+            openshift.withProject() {
               openshift.selector("bc", "java-springboot-example").startBuild("--from-dir=./target", "--wait=true", "--follow", "--loglevel=8")
             }
           }
@@ -40,7 +40,7 @@ pipeline{
       steps {
         script {
           openshift.withCluster() {
-            openshift.withProject('poc') {
+            openshift.withProject( {
               openshift.selector("dc", "java-springboot-example").rollout().latest();
             }
           }
