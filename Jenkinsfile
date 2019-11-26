@@ -36,17 +36,17 @@ pipeline{
       }
     }
 
-    stage('Desplegar') {
-      steps {
-        script {
-          openshift.withCluster() {
-            openshift.withProject() {
-              openshift.selector("dc", "java-springboot-example").rollout().latest();
-            }
-          }
-        }
-      }
-    } 
+#    stage('Desplegar') {
+#      steps {
+#        script {
+#          openshift.withCluster() {
+#            openshift.withProject() {
+#              openshift.selector("dc", "java-springboot-example").rollout().latest();
+#            }
+#          }
+#        }
+#      }
+#   } 
 
   }
 }
